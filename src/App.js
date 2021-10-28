@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+// import Flexbox from './components/Flexbox';
+import Grid from './components/Grid';
+import Topbar from './components/Topbar';
+import gameData from './assets/data/game-data.json';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Topbar />
+      <div className="main-content">
+        {/* <Flexbox gameData={gameData} /> */}
+        <Grid gameData={gameData} />
+      </div>
     </div>
   );
 }
