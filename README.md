@@ -6,4 +6,4 @@
 4. npm install
 
 # To view live server:
-https://github.io/blakeayer/slots-grid
+https://blakeayer.github.io/slots-grid/
