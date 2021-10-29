@@ -1,12 +1,13 @@
 import React from 'react'
+import classes from './search.module.css'
 
-const Search = (props) => {
+const Search = ({icon, filterInputSetter}) => {
     return (
-        <div className="search-container">
-            <input placeholder="Search" />
-            <button className="search-btn">
-                <span >
-                    <i className={props.icon}></i>
+        <div className={classes['search-container']}>
+            <input placeholder="Search" onChange={(event) => filterInputSetter(event.target.value)} />
+            <button className={classes['search-btn'] }>
+                <span>
+                    <i className={icon}></i>
                 </span>
             </button>
         </div>
