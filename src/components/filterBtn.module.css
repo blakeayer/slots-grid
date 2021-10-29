@@ -3,6 +3,16 @@
     margin: 0px 10px;
 }
 
+.filter-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  
+.filter-btn p {
+margin: 0px;
+}
+
 .active {
     color: #00A9E0
 }

@@ -16,7 +16,6 @@ function App() {
       <Topbar gameListSetter={gameListSetter} />
       <div className="main-content">
         <Grid gameList={gameList} />
-        {/* <Grid gameData={gameData} /> */}
       </div>
     </div>
   );

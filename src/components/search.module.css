@@ -17,10 +17,16 @@
   .search-container:focus-within {
       border: 1px solid #00A9E0;
   }
+
+  .search-container:hover > button,
+  .search-container:focus-within > button {
+    background-color: #00A9E0;
+  }
   
   .search-btn {
     padding: 0px;
     background-color: #5B6770;
+    border: none;
     border-radius: 50%;
   }
 

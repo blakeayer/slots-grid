@@ -1,0 +1,72 @@
+.grid {
+    --num-cols: 5;
+    --row-height: 200px;
+  
+    box-sizing: border-box;
+    display: grid;
+    margin: 0px 5%;
+    grid-template-columns: repeat(var(--num-cols), 1fr);
+    grid-auto-rows: var(--row-height);
+    grid-auto-flow: row dense;
+    gap: 20px;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .grid-item.lg {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  @media screen and (min-width: 1600px) {
+  .grid {
+    --row-height: 300px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .grid {
+    --num-cols: 4;
+    --row-height: 225px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .grid {
+    --num-cols: 3;
+    --row-height: 250px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .grid {
+    --num-cols: 2;
+    --row-height: 275px;
+  }
+  .topbar {
+    display: block;
+    text-align: center;
+  }
+  .topbar-right {
+    display: block;
+  }
+  .filter-container {
+    margin: 10px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .grid {
+    --num-cols: 1;
+    --row-height: 350px;
+  }
+  .grid-item.lg {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+}

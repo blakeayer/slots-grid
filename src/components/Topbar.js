@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import classes from './topbar.module.css'
 
 import FilterBtn from './FilterBtn';
 import Search from './Search';
@@ -9,9 +10,8 @@ const Topbar = ({gameListSetter}) => {
 
     const [activeFilterBtn, setActiveFilterBtn] = useState("ALL");
     const [filterInputValue, setFilterInputValue] = useState("");
-
-    // const [filteredGamesList, setFilteredGamesList] = useState();
-    // const [searchededGamesList, setSearchedGamesList] = useState();
+    const [filteredGamesList, setFilteredGamesList] = useState([]);
+    const [searchededGamesList, setSearchedGamesList] = useState([]);
 
     const filterBtnSetter = (filterData) => {
         setActiveFilterBtn(filterData);
@@ -21,32 +21,33 @@ const Topbar = ({gameListSetter}) => {
         setFilterInputValue(filterData);
     };
 
-    const filteredGames = gameData.filter(({tags}) => tags.includes(activeFilterBtn));
-    
-    // useEffect(() => {
-    //     setFilteredGamesList(filteredGames)
-    // }, [filteredGames])
-    
-    const searchedGames = filterInputValue 
-        ? filteredGames.filter(({title}) => 
-            title.toString().toLowerCase().includes(filterInputValue.toLowerCase())) 
-            // title.toString().toLowerCase().indexOf(filterInputValue.toLowerCase()) !== -1) 
-        : filteredGames;
+    useEffect(() => {
+        const filteredGames = gameData.filter(({tags}) => tags.includes(activeFilterBtn));
+        setFilteredGamesList(filteredGames)
+    }, [activeFilterBtn])
     
     useEffect(() => {
-        gameListSetter(searchedGames)
-    }, [gameListSetter, searchedGames])
+        const searchedGames = filterInputValue 
+        ? filteredGamesList.filter(({title}) => 
+            title.toString().toLowerCase().includes(filterInputValue.toLowerCase())) 
+        : filteredGamesList;
+        setSearchedGamesList(searchedGames)
+    }, [filteredGamesList, filterInputValue])
+    
+    useEffect(() => {
+        gameListSetter(searchededGamesList)
+    }, [gameListSetter, searchededGamesList])
 
     return (
-        <div className="topbar">
+        <div className={classes.topbar}>
 
-            <div className="topbar-left">
+            <div className={classes['topbar-left']}>
                 <h2>SLOTS</h2>
             </div>
 
-            <div className="topbar-right">
+            <div className={classes['topbar-right']}>
 
-                <div className="filter-container">
+                <div className={classes['filter-container']}>
                     <FilterBtn 
                         filter="ALL"
                         activeFilterBtn={activeFilterBtn} 
@@ -68,6 +69,7 @@ const Topbar = ({gameListSetter}) => {
                     icon="fas fa-search fa-lg" 
                     filterInputSetter={filterInputSetter} 
                 />
+
             </div>
 
         </div>

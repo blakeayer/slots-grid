@@ -1,16 +1,16 @@
 import React from 'react'
+import classes from './grid.module.css';
 
 const Grid = ({gameList}) => {
     return (
-        <div className="grid">
+        <div className={classes.grid}>
             {gameList && gameList.map((game, index) => {
                 return (
-                    <div key={index} className={`grid-item ${game.thumbSize}`}>
+                    <div key={index} className={`${classes['grid-item']} ${game.thumbSize}`}>
                         <img 
                             src={game.thumbSrc} 
                             alt={game.title[0]}
                         />
-
                     </div>
                 )
             })}
