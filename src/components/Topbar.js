@@ -26,10 +26,25 @@ const Topbar = ({gameListSetter}) => {
         setFilteredGamesList(filteredGames)
     }, [activeFilterBtn])
     
+
+    // useEffect(() => {
+    //     const searchedGames = filterInputValue 
+    //     ? filteredGamesList.filter(({title}) => 
+    //         title.toString().toLowerCase().startsWith(filterInputValue.toLowerCase())) 
+    //     : filteredGamesList;
+    //     setSearchedGamesList(searchedGames)
+    // }, [filteredGamesList, filterInputValue])
+    
     useEffect(() => {
         const searchedGames = filterInputValue 
-        ? filteredGamesList.filter(({title}) => 
-            title.toString().toLowerCase().includes(filterInputValue.toLowerCase())) 
+        ? filteredGamesList.filter(({title}) => {
+            for(let i = 0; i < title.length; i++) {
+                if(title[i].toLowerCase().startsWith(filterInputValue.toLowerCase())) {
+                    return true
+                }
+            }
+            return false
+        })
         : filteredGamesList;
         setSearchedGamesList(searchedGames)
     }, [filteredGamesList, filterInputValue])
