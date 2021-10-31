@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/slots-grid/static/css/main.e78be024.chunk.css",
-    "main.js": "/slots-grid/static/js/main.0d62251b.chunk.js",
-    "main.js.map": "/slots-grid/static/js/main.0d62251b.chunk.js.map",
+    "main.js": "/slots-grid/static/js/main.8b45be51.chunk.js",
+    "main.js.map": "/slots-grid/static/js/main.8b45be51.chunk.js.map",
     "runtime-main.js": "/slots-grid/static/js/runtime-main.0cc807a1.js",
     "runtime-main.js.map": "/slots-grid/static/js/runtime-main.0cc807a1.js.map",
     "static/js/2.fe6554e8.chunk.js": "/slots-grid/static/js/2.fe6554e8.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.0cc807a1.js",
     "static/js/2.fe6554e8.chunk.js",
     "static/css/main.e78be024.chunk.css",
-    "static/js/main.0d62251b.chunk.js"
+    "static/js/main.8b45be51.chunk.js"
   ]
 }
